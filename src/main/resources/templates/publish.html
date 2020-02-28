@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>发布页面</title>
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="/css/community.css">
+    <script src="/js/jquery-3.4.1.min.js"></script>
+    <script src="/js/bootstrap.min.js" type="/application/javascript"></script>
+
+</head>
+<body>
+<!--导航栏-->
+<div th:insert="~{navication :: nav}"></div>
+
+<div class="container-fluid main">
+    <div class="row">
+        <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
+            <h2><span class="glyphicon glyphicon-plus" aria-hidden="true">发起</span></h2>
+            <hr>
+
+            <form action="/doPublish" method="post">
+                <input type="hidden" name="id" id="id" th:value="${session.user.getId()}">
+                <input type="hidden" name="username" id="username" th:value="${session.user.getUsername()}">
+                <div class="form-group">
+                    <label for="title">问题标题</label>
+                    <input th:value="${title}" type="text" class="form-control" id="title" name="title"
+                           placeholder="你想表达的标题......"/>
+                </div>
+                <div class="form-group">
+                    <label for="content">问题内容</label>
+                    <textarea th:text="${content}" name="content" id="content" class="form-control" cols="30" rows="10"
+                              placeholder="你想表达的内容......"/>
+                </div>
+                <div class="container-fluid mian">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
+                            <span th:text="${noTitle}"></span>
+                            <span th:text="${noContent}"></span>
+                            <button type="submit" class="btn btn-success btn-publish">发布</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
+            <h3>发起问题指南</h3>
+            * 1 <br>
+            * 2 <br>
+            * 3 <br>
+            * 4 <br>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

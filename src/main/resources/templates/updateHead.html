@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/css/community.css">
+<script type="text/javascript" src="/js/jquery-3.4.1.min.js"></script>
+<script src="/js/bootstrap.min.js" type="application/javascript"></script>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<!-- Loding font -->
+<link href="https://fonts.googleapis.com/css?family=Montserrat:300,700" rel="stylesheet">
+<!-- Custom Styles -->
+<link rel="stylesheet" type="text/css" href="css/styles.css">
+
+<head>
+    <meta charset="UTF-8">
+    <title>增加/修改头像</title>
+</head>
+<body>
+
+<div th:insert="~{navication :: nav}"></div>
+<div align="center">
+    选择图片：
+    <form enctype="multipart/form-data" method="post" action="/doUpload">
+        <input type="file" name="file"/>
+        <input type="submit" value="上传">
+        <input type="hidden" name="token" th:value="${session.user.getToken()}">
+    </form>
+    <span th:text="${error}"></span>
+</div>
+
+</body>
+</html>

@@ -29,6 +29,7 @@ public class FileController {
         return "updateHead";
     }
 
+
     //处理上传的文件
     @PostMapping(value = "/doUpload")
     public String uploadImg(

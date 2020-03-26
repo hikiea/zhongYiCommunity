@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body>
+<div th:fragment="resumeNav">
+    <div class="col-sm-12 col-md-3 left">
+        <div class="row justify-content-between">
+            <div class="col-6 col-sm-5 col-md-12 p-4">
+                <a href="updateHead">
+                    <img class="img-myStyle img-fluid p-2 border" th:src="@{'picture/head/'+${session.user.getHeadName()}}">
+                </a>
+                <!--                <img src="/resumeStatic/picture/c.jpg" alt="userPhoto" class="img-myStyle img-fluid p-2 border">-->
+                <h3 class="text-white text-center">李忠毅</h3>
+                <h5>求职意向：java后端</h5>
+            </div>
+            <div class="col-6 col-sm-5 col-md-12 p-5 p-md-4">
+                <h4>出生年月</h4>
+                <p>1998年8月28日</p>
+                <h4>联系电话</h4>
+                <p>13202792608</p>
+                <h4>电子邮箱</h4>
+                <p>594183034@qq.com</p>
+                <h4>联系地址</h4>
+                <p>广东省肇庆市端州区</p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

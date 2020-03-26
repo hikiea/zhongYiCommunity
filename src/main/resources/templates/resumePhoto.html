@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1, shrink-to-fit=no">
+    <title>Title</title>
+    <link rel="stylesheet" href="/resumeStatic/css/bootstrap.css">
+    <script src="/resumeStatic/js/jquery-3.3.1.slim.js"></script>
+    <script src="/resumeStatic/js/bootstrap.bundle.js"></script>
+    <script src="/resumeStatic/js/bootstrap.min.js"></script>
+    <!--css文件-->
+    <link rel="stylesheet" href="/resumeStatic/css/style.css">
+    <!--字体图标文件-->
+    <link rel="stylesheet" href="/resumeStatic/fonts/css/font-awesome.css">
+</head>
+<body class="container-fluid">
+<div class="row">
+    <!--header-->
+    <div th:insert="~{resumeNavication :: resumeNav}"></div>
+    <!--content-->
+    <div class="col-sm-12 col-md-9 right p-0">
+        <div class="my-4">
+            <ul class="clearfix">
+                <li class="float-sm-left">
+                    <i class="fa fa-user-circle-o fa-2x"></i>
+                    <a href="resumeIndex" class="ml-2">个人履历</a>
+                </li>
+                <li class="float-sm-left mx-sm-5">
+                    <i class="fa fa-envelope-o fa-2x"></i>
+                    <a href="resumeContact" class="ml-2">请给我发送邮件</a>
+                </li>
+                <li class="float-sm-left">
+                    <i class="fa fa-home fa-2x"></i>
+                    <a href="resumePhoto" class="ml-2">生活照</a>
+                </li>
+            </ul>
+        </div>
+        <h5 class="color1">生活照</h5>
+        <div class="px-5 py-5 photo">
+            <div class="card-columns">
+                <div class="card bg-primary p-3">
+                    <img src="/resumeStatic/picture/001.jpg" class="card-img-top" alt="">
+                </div>
+                <div class="card bg-dark p-3">
+                    <img src="/resumeStatic/picture/002.jpg" class="card-img-top" alt="">
+                </div>
+                <div class="card bg-info p-3">
+                    <img src="/resumeStatic/picture/003.jpg" class="card-img-top" alt="">
+                </div>
+                <div class="card bg-success p-3">
+                    <img src="/resumeStatic/picture/004.jpg" class="card-img-top" alt="">
+                </div>
+                <div class="card bg-danger p-3">
+                    <img src="/resumeStatic/picture/005.jpg" class="card-img-top" alt="">
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>

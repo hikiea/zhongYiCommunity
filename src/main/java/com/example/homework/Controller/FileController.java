@@ -47,9 +47,9 @@ public class FileController {
             // 防止图片名字一样
             String hToken = UUID.randomUUID().toString();
 //             图片存放的文件夹地址（本地服务器使用）
-//            String filePath = "F:\\IDEA\\Spring_Boot\\zhongYiCommunity\\src\\main\\resources\\static\\picture\\head\\";
+            String filePath = "F:\\IDEA\\Spring_Boot\\zhongYiCommunity\\src\\main\\resources\\static\\picture\\head\\";
 //          下面这个在阿里云服务器中使用
-          String filePath = "C:\\Users\\Administrator\\Desktop\\head\\";
+//          String filePath = "C:\\Users\\Administrator\\Desktop\\head\\";
 
             String headName = hToken + fileName;
             try{

@@ -9,32 +9,19 @@
     <script src="/resumeStatic/js/bootstrap.bundle.js"></script>
     <script src="/resumeStatic/js/bootstrap.min.js"></script>
     <!--css文件-->
-    <link rel="stylesheet" href="/resumeStatic/css/style.css">
+    <link rel="stylesheet" href="/resumeStatic/css/resumeStyle.css">
     <!--字体图标文件-->
     <link rel="stylesheet" href="/resumeStatic/fonts/css/font-awesome.css">
 </head>
 <body class="container-fluid">
 <div class="row">
+
     <!--header-->
     <div th:insert="~{resumeNavication :: resumeNav}"></div>
     <!--content-->
     <div class="col-sm-12 col-md-9 right p-0">
-        <div class="my-4">
-            <ul class="clearfix">
-                <li class="float-sm-left">
-                    <i class="fa fa-user-circle-o fa-2x"></i>
-                    <a href="resumeIndex" class="ml-2">个人履历</a>
-                </li>
-                <li class="float-sm-left mx-sm-5">
-                    <i class="fa fa-envelope-o fa-2x"></i>
-                    <a href="resumeContact" class="ml-2">请给我发送邮件</a>
-                </li>
-                <li class="float-sm-left">
-                    <i class="fa fa-home fa-2x"></i>
-                    <a href="resumePhoto" class="ml-2">生活照</a>
-                </li>
-            </ul>
-        </div>
+        <!--顶部导航-->
+        <div th:insert="~{resumeTop :: resumeTop}"></div>
         <h5 class="color1">联系我</h5>
         <div class="px-5 py-5">
             <div class="pr-5">
@@ -52,5 +39,6 @@
         </div>
     </div>
 </div>
+
 </body>
 </html>

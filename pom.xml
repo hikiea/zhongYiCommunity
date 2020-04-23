@@ -50,6 +50,11 @@
             <version>1.2.54</version>
         </dependency>
 
+        <!--javax.mail-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-mail</artifactId>
+        </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-maven-plugin -->
         <dependency>
@@ -57,7 +62,6 @@
             <artifactId>spring-boot-maven-plugin</artifactId>
             <version>2.2.4.RELEASE</version>
         </dependency>
-
 
         <dependency>
             <groupId>org.springframework.boot</groupId>

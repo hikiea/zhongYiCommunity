@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1, shrink-to-fit=no">
-    <title>Title</title>
+    <title>简历-发送邮件</title>
     <link rel="stylesheet" href="/resumeStatic/css/bootstrap.css">
     <script src="/resumeStatic/js/jquery-3.3.1.slim.js"></script>
     <script src="/resumeStatic/js/bootstrap.bundle.js"></script>
@@ -23,20 +23,23 @@
         <!--顶部导航-->
         <div th:insert="~{resumeTop :: resumeTop}"></div>
         <h5 class="color1">联系我</h5>
-        <div class="px-5 py-5">
-            <div class="pr-5">
-                <div class="form-group">
-                    <input type="text" class="form-control form-control-lg " placeholder="收件人">
+        <form action="/sendEmail" method="post">
+            <div class="px-5 py-5">
+                <div class="pr-5">
+                    <div class="form-group">
+                        <input name="email" type="email" class="form-control form-control-lg " placeholder="请在此留下您的邮箱，我稍后联系您！">
+                    </div>
+                    <div class="form-group">
+                        <input name="emailTitle" type="text" class="form-control form-control-lg " placeholder="邮箱标题">
+                    </div>
+                    <div class="form-group">
+                        <textarea name="emailContent" class="form-control form-control-lg" rows="6" placeholder="邮件内容"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-lg btn-primary">发送</button>
+                    <span th:text="${msg}"></span>
                 </div>
-                <div class="form-group">
-                    <input type="email" class="form-control form-control-lg " placeholder="收件人邮箱">
-                </div>
-                <div class="form-group">
-                    <textarea class="form-control form-control-lg" rows="6" placeholder="发送的内容"></textarea>
-                </div>
-                <button type="submit" class="btn btn-lg btn-primary">发送</button>
             </div>
-        </div>
+        </form>
     </div>
 </div>
 

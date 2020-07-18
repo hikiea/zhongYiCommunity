@@ -16,13 +16,10 @@ import java.util.UUID;
 public class CommentController {
 
     @Autowired
-    private CommentService commentService;
-
-    @Autowired
     private CommentMapper commentMapper;
 
     @ResponseBody
-    @RequestMapping(value = "/comment", method = RequestMethod.POST)
+    @PostMapping("/comment")
     public Object post(@RequestBody CommentCreateDTO commentCreateDTO) {
         String commentUUID = UUID.randomUUID().toString();
         Comment comment = new Comment();
@@ -37,10 +34,8 @@ public class CommentController {
         comment.setLike_count(0);
         comment.setCommentUUID(commentUUID);
         commentMapper.insert(comment);
-
-        String url = "redirect:/tie/" + tieId;
-
-        return url;
+        String Url = "redirect:/tie/" + tieId;
+        return Url;
     }
 
 

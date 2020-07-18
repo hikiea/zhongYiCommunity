@@ -30,17 +30,5 @@ function doComment() {
     });
 }
 
-//不许删，我也不知道那个起作用！
-function flush() {
-    history.go(0);
-    history.go(-1);
-    location.reload();
-    location = location;
-    location.assign(location);
-    document.execCommand('Refresh');
-    window.navigate(location);
-    location.replace(location);
-    document.URL = location.href;
-}
 
 

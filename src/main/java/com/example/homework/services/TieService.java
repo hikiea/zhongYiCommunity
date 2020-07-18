@@ -41,24 +41,15 @@ public class TieService {
 
     // 用来首页分页展示帖子
     public PageDTO list(Integer page, Integer size) {
-
         PageDTO pageDTO = new PageDTO();
         Integer totalCount = tieMapper.count();
         pageDTO.setPageNation(totalCount, page, size);
-
         if (page < 1) {
-            page = 1;
-        }
-
+            page = 1; }
         if (page > pageDTO.getTotalPage()) {
-            page = pageDTO.getTotalPage();
-        }
-
+            page = pageDTO.getTotalPage(); }
         //size*(page-1)
         Integer offset = size * (page - 1);
-
-
-
         //在 tieDTO 进行 Tie 和 User 匹配
         // 1. 查询 tie 表每一条数据，放在 ties 对象里面，类型为 list<Tie>
         List<Tie> ties = tieMapper.list(offset,size);

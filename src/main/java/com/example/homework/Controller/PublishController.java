@@ -40,26 +40,22 @@ public class PublishController {
     //发布功能实现
     @PostMapping("/doPublish")
     public String doPublish(
+            /*获取前端的数据*/
             @RequestParam(value = "title") String title,
             @RequestParam(value = "content") String content,
             @RequestParam(value = "id") Integer id,
             @RequestParam(value = "username") String username,
             Model model
     ) {
-
         model.addAttribute("title", title);
         model.addAttribute("content", content);
-
+        /* 内容校验 */
         if (title == null || title == "") {
             model.addAttribute("noTitle", "标题不能为空！");
-            return "publish";
-        }
-
+            return "publish"; }
         if (content == null || content == "") {
             model.addAttribute("noContent", "内容不能为空！");
-            return "publish";
-        }
-
+            return "publish"; }
         User publish_user = null;
         //放入时间
         Date date = new Date();
@@ -71,6 +67,7 @@ public class PublishController {
         tie.setUsername(username);
         tie.setCreatorId(id);
         tie.setDate(nowTime);
+        /* 数据持久化操作 */
         tieMapper.addTie(tie);
         return "redirect:/";
     }
